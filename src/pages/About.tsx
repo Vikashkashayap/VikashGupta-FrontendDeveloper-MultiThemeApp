@@ -1,8 +1,6 @@
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
 
 const About: React.FC = () => {
-  const { theme } = useTheme();
 
   return (
     <div className="min-h-screen transition-all duration-300 ease-in-out">

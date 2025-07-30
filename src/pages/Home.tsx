@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import type { Product } from '../types/theme';
 import ProductCard from '../components/ProductCard';
-import { useTheme } from '../context/ThemeContext';
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { theme } = useTheme();
 
   useEffect(() => {
     const fetchProducts = async () => {
