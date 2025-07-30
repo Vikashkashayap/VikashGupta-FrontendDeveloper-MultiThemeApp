@@ -78,52 +78,20 @@ const Home: React.FC = () => {
 
       {/* Theme 2: Dark layout with sidebar */}
       <div className="theme2-layout pt-20 pb-8 bg-gray-900 min-h-screen">
-        <div className="flex flex-col lg:flex-row">
-          {/* Mobile Sidebar Toggle */}
-          <div className="lg:hidden bg-gray-800 p-4 border-b border-gray-700">
-            <button className="text-gray-300 hover:text-white transition-colors">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Sidebar */}
-          <div className="hidden lg:block w-64 bg-gray-800 min-h-screen fixed left-0 top-16">
-            <div className="p-4 sm:p-6">
-              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">Categories</h2>
-              <nav className="space-y-2">
-                {Array.from(new Set(products.map(p => p.category))).map((category) => (
-                  <a
-                    key={category}
-                    href="#"
-                    className="block text-gray-300 hover:text-white transition-colors py-2 text-sm sm:text-base"
-                  >
-                    {category}
-                  </a>
-                ))}
-              </nav>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
+              Welcome to Our Store
+            </h1>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+              Explore our products with our dark theme. Elegant design with sidebar navigation.
+            </p>
           </div>
           
-          {/* Main content */}
-          <div className="flex-1 lg:ml-64">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-8 sm:mb-12">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
-                  Welcome to Our Store
-                </h1>
-                <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto px-4">
-                  Explore our products with our dark theme. Elegant design with sidebar navigation.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-                {products.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </div>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
           </div>
         </div>
       </div>
